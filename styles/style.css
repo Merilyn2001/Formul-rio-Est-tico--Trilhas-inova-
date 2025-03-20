@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.formulario {
+    width: 50%;
+    padding: 64px;
+    overflow-y: auto;
+    height: 100vh;
+    scrollbar-width: none;
+}
+
+.formulario::-webkit-scrollbar {
+    display: none;
+}
+
+.imagens {
+    background-color: #2135a6;
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.voltar__pagina {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #57534E;
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #292524;
+    margin-bottom: 24px;
+}
+
+h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #292524;
+    margin-bottom: 24px;
+}
+
+p {
+    font-size: 16px;
+    color: #57534E;
+    margin-bottom: 24px;
+}
+
+fieldset {
+    border: none;
+    margin-bottom: 64px;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    color: #292524;
+    margin-bottom: 24px;
+}
+
+input, select {
+    width: 100%;
+    max-width: 528px;
+    height: 48px;
+    border: 1px solid #D6D3D1;
+    border-radius: 8px;
+    padding: 0 16px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    color: #292524;
+    margin-top: 8px;
+}
+
+input[type="date"] {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #292524;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.upload-identidade, .upload-residencia {
+    width: 100%;
+    max-width: 528px;
+    height: 160px;
+    border: 1px dashed #D6D3D1;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    cursor: pointer;
+    margin-top: 8px;
+    gap: 8px;
+}
+
+.upload-identidade img, .upload-residencia img {
+    width: 48px;
+    height: 48px;
+}
+
+.upload-identidade span, .upload-residencia span {
+    font-size: 16px;
+    color: #57534E;
+}
+
+.residencial__localizacao {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 16px;
+}
+
+.residencial__localizacao label {
+    margin-bottom: 0;
+}
+
+.trilhas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.trilha {
+    width: 256px;
+    height: 120px;
+    border: 1px solid #D1D5DB;
+    border-radius: 8px;
+    padding: 16px;
+    position: relative;
+    cursor: pointer;
+}
+
+.trilha:hover {
+    border-color: #F3541C;
+}
+
+.trilha input[type="radio"] {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 2px;
+    left: 2px;
+    border: 1.5px solid #D6D3D1;
+    accent-color: #F3541C;
+}
+
+.trilha-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    font-size: 16px;
+    color: #292524;
+    padding-left: 24px; /* Ajuste para evitar sobreposição com o radio */
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 8px;
+}
+
+.formulario__termo label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+}
+
+.formulario__termo input[type="checkbox"] {
+    width: 19px;
+    height: 19px;
+    position: absolute;
+    top: 2.5px;
+    left: 2.5px;
+    border: 1.5px solid #D6D3D1;
+    accent-color: #F3541C;
+}
+
+.terms {
+    font-size: 16px;
+    color: #292524;
+    padding-left: 31px; /* Ajuste para alinhar com o checkbox */
+}
+
+.terms a {
+    color: #E43A12;
+    text-decoration: none;
+}
+
+.formulario__botoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+.formulario__botoes button {
+    width: 123px;
+    height: 48px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background-color: #FFFFFF;
+    border: 1px solid #E43A12;
+    color: #E43A12;
+}
+
+.cancel-btn:hover {
+    background-color: #E43A12;
+    color: #FFFFFF;
+}
+
+.submit-btn {
+    background-color: #E43A12;
+    border: none;
+    color: #FFFFFF;
+}
+
+.submit-btn:hover {
+    background-color: #F3541C;
+}
