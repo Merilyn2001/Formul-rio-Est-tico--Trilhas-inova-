@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capa</title>
+    <title>Capa - Programa Trilhas</title>
     <link rel="stylesheet" href="/styles/capa.css">
 </head>
 <body>
+    <img src="../assets/capa2.png" alt="Capa Programa Trilhas" id="capa-imagem">
     <div class="texto-ancora">
-        <a href="./index.html">Clique aqui para fazer sua inscrição</a>
+        <p id="status-inscricao">Verificando status da inscrição...</p>
+        <div id="botoes-capa">
+            <a href="./index.html" id="fazer-inscricao">Fazer Inscrição</a>
+            <a href="./login.html" id="alterar-inscricao" style="display: none;">Alterar Inscrição</a>
+            <button id="nova-inscricao" style="display: none;">Nova Inscrição</button>
+            <button id="logout-btn" style="display: none;">Sair</button>
+        </div>
     </div>
+    <script src="auth.js" defer></script>
+    <script src="capa.js" defer></script>
 </body>
 </html>

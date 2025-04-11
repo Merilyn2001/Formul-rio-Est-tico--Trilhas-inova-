@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Programa Trilhas</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <main>
+        <section class="container">
+            <form action="" class="formulario" id="form-login">
+                <fieldset class="formulario__titulo">
+                    <h1>Login</h1>
+                    <p>Faça login para acessar o Programa Trilhas.</p>
+                </fieldset>
+
+                <fieldset class="formulario__mensagem_erro" id="mensagem-erro-login" style="display: none;">
+                    <p id="mensagem-erro-texto"></p>
+                </fieldset>
+
+                <fieldset class="formulario__credenciais">
+                    <label for="loginIdUsuario">ID do Usuário (CPF)
+                        <input type="text" id="loginIdUsuario" name="loginIdUsuario" placeholder="000.000.000-00" maxlength="14" required>
+                        <span class="erro-mensagem" id="erro-loginIdUsuario"></span>
+                    </label>
+                    <label for="loginSenha">Senha
+                        <input type="password" id="loginSenha" name="loginSenha" placeholder="Digite sua senha" required>
+                        <span class="erro-mensagem" id="erro-loginSenha"></span>
+                    </label>
+                </fieldset>
+
+                <fieldset class="formulario__botoes">
+                    <button type="submit" class="submit-btn">Entrar</button>
+                </fieldset>
+            </form>
+
+            <div class="imagens">
+                <img class="imagem__estudante" src="./assets/imagem.svg" alt="Pessoa estudando com notebook">
+                <img class="imagem__inova" src="./assets/trilha.svg" alt="Logo Programa Trilhas">
+            </div>
+        </section>
+    </main>
+    <script src="auth.js" defer></script> <!-- Adicionado auth.js -->
+    <script src="login.js" defer></script>
+</body>
+</html>

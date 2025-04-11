@@ -15,6 +15,7 @@ body {
 .container {
     display: flex;
     height: 100vh;
+    flex-direction: row;
 }
 
 .formulario {
@@ -41,6 +42,10 @@ body {
     justify-content: center;
     align-items: center;
     gap: 20px;
+}
+
+.imagem__estudante, .imagem__inova {
+    object-fit: scale-down;
 }
 
 .voltar__pagina {
@@ -122,6 +127,7 @@ input[type="file"] {
     cursor: pointer;
     margin-top: 8px;
     gap: 8px;
+    position: relative;
 }
 
 .upload-identidade img, .upload-residencia img {
@@ -132,6 +138,14 @@ input[type="file"] {
 .upload-identidade span, .upload-residencia span {
     font-size: 16px;
     color: #57534E;
+}
+
+.upload-identidade .erro-mensagem, .upload-residencia .erro-mensagem {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
 }
 
 .residencial__localizacao {
@@ -183,13 +197,18 @@ input[type="file"] {
     width: 100%;
     font-size: 16px;
     color: #292524;
-    padding-left: 24px; /* Ajuste para evitar sobreposição com o radio */
+    padding-left: 24px;
 }
 
 .icon {
     width: 40px;
     height: 40px;
     margin-bottom: 8px;
+}
+
+.formulario__trilhas .erro-mensagem {
+    margin-top: 8px;
+    width: 100%;
 }
 
 .formulario__termo label {
@@ -212,12 +231,18 @@ input[type="file"] {
 .terms {
     font-size: 16px;
     color: #292524;
-    padding-left: 31px; /* Ajuste para alinhar com o checkbox */
+    padding-left: 31px;
 }
 
 .terms a {
     color: #E43A12;
     text-decoration: none;
+}
+
+.formulario__termo .erro-mensagem {
+    position: absolute;
+    bottom: -20px;
+    left: 31px;
 }
 
 .formulario__botoes {
@@ -235,23 +260,303 @@ input[type="file"] {
     cursor: pointer;
 }
 
-.cancel-btn {
+.cancel-btn, .submit-btn, .save-btn {
     background-color: #FFFFFF;
     border: 1px solid #E43A12;
     color: #E43A12;
 }
 
-.cancel-btn:hover {
+.cancel-btn:hover, .submit-btn:hover, .save-btn:hover {
     background-color: #E43A12;
     color: #FFFFFF;
 }
 
-.submit-btn {
-    background-color: #E43A12;
+.erro-mensagem {
+    color: red;
+    font-size: 0.9em;
+    display: none;
+}
+
+.erro-mensagem.ativo {
+    display: block;
+}
+
+.input-invalido {
+    border: 1px solid red;
+}
+
+.upload-identidade .erro-mensagem,
+.upload-residencia .erro-mensagem {
+    color: red !important; 
+}
+
+.upload-identidade span:not(.erro-mensagem),
+.upload-residencia span:not(.erro-mensagem) {
+    font-size: 16px;
+    color: #57534E;
+}
+
+.formulario__credenciais {
+    margin-bottom: 64px;
+}
+
+.formulario__credenciais h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #292524;
+    margin-bottom: 24px;
+}
+
+.formulario__credenciais label {
+    display: block;
+    font-size: 16px;
+    color: #292524;
+    margin-bottom: 24px;
+}
+
+.formulario__credenciais input {
+    width: 100%;
+    max-width: 528px;
+    height: 48px;
+    border: 1px solid #D6D3D1;
+    border-radius: 8px;
+    padding: 0 16px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    color: #292524;
+    margin-top: 8px;
+}
+
+.formulario__mensagem {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.formulario__mensagem p {
+    font-size: 16px;
+    color: #292524;
+    margin-bottom: 16px;
+}
+
+.formulario__mensagem .submit-btn {
+    background-color: #2563EB;
+    color: white;
     border: none;
-    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
-.submit-btn:hover {
-    background-color: #F3541C;
+.formulario__mensagem_erro {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.formulario__mensagem_erro p {
+    font-size: 16px;
+    color: red;
+    margin: 0;
+}
+
+/* Configurações responsivas para tablets */
+@media (max-width: 768px) {
+    body {
+        padding-bottom: 60px; 
+    }
+
+    .formulario {
+        width: 50%;
+        padding: 32px;
+    }
+
+    .imagens {
+        position: static;
+        width: 50%;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .imagens img {
+        max-width: 80%;
+        height: auto;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+
+    h2 {
+        font-size: 14px;
+        margin-bottom: 16px;
+    }
+
+    p {
+        font-size: 14px;
+        margin-bottom: 16px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    input, select {
+        max-width: 100%;
+        height: 44px;
+        font-size: 14px;
+    }
+
+    .upload-identidade, .upload-residencia {
+        max-width: 100%;
+        height: 120px;
+    }
+
+    .upload-identidade img, .upload-residencia img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .upload-identidade span, .upload-residencia span {
+        font-size: 14px;
+    }
+
+    .residencial__localizacao {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .trilha {
+        width: calc(50% - 8px);
+        height: 100px;
+    }
+
+    .trilha-box {
+        font-size: 14px;
+    }
+
+    .icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .terms {
+        font-size: 14px;
+    }
+
+    .formulario__botoes {
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 60px;
+    }
+
+    .formulario__botoes button {
+        width: 100px;
+        height: 44px;
+        font-size: 14px;
+        
+    }
+}
+
+/* Configurações responsivas para smartphones menores */
+@media (max-width: 480px) {
+    
+   
+    .container {
+        flex-direction: column-reverse;
+    }
+    .formulario {
+        width: auto;
+        height: 70%;
+        padding: 16px;
+    }
+
+    .imagens {
+        
+        width: 100%;
+        height: 30%;
+        padding: 20px 0;
+    }
+
+    .imagem__estudante {
+        max-height: 20vh;
+    }
+   
+
+   
+    h1 {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    h2 {
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+
+    p {
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+
+    label {
+        font-size: 12px;
+        margin-bottom: 16px;
+    }
+
+    input, select {
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .upload-identidade, .upload-residencia {
+        height: 100px;
+    }
+
+    .upload-identidade img, .upload-residencia img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .upload-identidade span, .upload-residencia span {
+        font-size: 12px;
+    }
+
+    .upload-identidade .erro-mensagem, .upload-residencia .erro-mensagem {
+        bottom: -16px; /* Ajusta a posição da mensagem de erro */
+        font-size: 10px;
+    }
+
+    .trilha {
+        width: 100%; /* Uma trilha por linha */
+        height: 80px;
+    }
+
+    .trilha-box {
+        font-size: 12px;
+    }
+
+    .icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .terms {
+        font-size: 12px;
+        padding-left: 25px; /* Ajusta o padding para o checkbox */
+        
+    }
+
+    .formulario__termo input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+        top: 2px;
+        left: 2px;
+    }
+
+    .formulario__botoes button {
+        width: 90px;
+        height: 40px;
+        font-size: 12px;
+        margin-bottom: 70px;
+    }
 }
